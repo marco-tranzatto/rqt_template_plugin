@@ -1,0 +1,17 @@
+<library path="lib/librqt_template_plugin">
+    <class name="TemplatePlugin" type="rqt_template_plugin::TemplatePlugin" base_class_type="rqt_gui_cpp::Plugin">
+        <description>
+            An rqt plugin template.
+        </description>
+        <qtgui>
+            <group>
+                <label>Robot Tools</label>
+                <icon type="theme">folder</icon>
+                <statustip></statustip>
+            </group>
+            <label>RQT Template Plugin</label>
+            <icon type="theme">applications-graphics</icon>
+            <statustip>An rqt template plugin.</statustip>
+        </qtgui>
+    </class>
+</library>

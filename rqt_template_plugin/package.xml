@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rqt_template_plugin</name>
+  <version>0.0.1</version>
+  <description>The rqt_template_plugin package</description>
+
+  <author email="marcot@ethz.ch">Marco Tranzatto</author>
+  <maintainer email="marcot@ethz.ch">Marco Tranzatto</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <architecture_independent/>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+</package>

@@ -1,0 +1,8 @@
+<launch>
+
+  <arg name="name"       value="rqt_template_plugin"/>
+
+  <!-- Launch node -->
+  <node name="$(arg name)" pkg="rqt_template_plugin" type="rqt_template_plugin" output="screen"/>
+
+</launch>
