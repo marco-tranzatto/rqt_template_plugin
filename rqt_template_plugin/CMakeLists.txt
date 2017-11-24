@@ -9,12 +9,12 @@ find_package(catkin REQUIRED COMPONENTS
         rqt_gui_cpp
         )
 
-if("${qt_gui_cpp_USE_QT_MAJOR_VERSION} " STREQUAL "5 ")
-  find_package(Qt5Widgets REQUIRED)
-else()
-  find_package(Qt4 COMPONENTS QtCore QtGui REQUIRED)
-  include(${QT_USE_FILE})
-endif()
+if ("${qt_gui_cpp_USE_QT_MAJOR_VERSION} " STREQUAL "5 ")
+    find_package(Qt5Widgets REQUIRED)
+else ()
+    find_package(Qt4 COMPONENTS QtCore QtGui REQUIRED)
+    include(${QT_USE_FILE})
+endif ()
 
 catkin_python_setup()
 
@@ -28,7 +28,6 @@ set(rqt_template_plugin_SRCS
 ###########
 
 
-
 ###########
 # headers #
 ###########
@@ -37,7 +36,6 @@ set(rqt_template_plugin_HDRS
         include/rqt_template_plugin/TemplateWidget.hpp
         )
 ###########
-
 
 
 ############
@@ -61,13 +59,13 @@ catkin_package(
         DEPENDS
 )
 
-if("${qt_gui_cpp_USE_QT_MAJOR_VERSION} " STREQUAL "5 ")
-  qt5_wrap_cpp(rqt_template_plugin_MOCS ${rqt_template_plugin_HDRS})
-  qt5_wrap_ui(rqt_template_plugin_UIS_H ${rqt_template_plugin_UIS})
-else()
-  qt4_wrap_cpp(rqt_template_plugin_MOCS ${rqt_template_plugin_HDRS})
-  qt4_wrap_ui(rqt_template_plugin_UIS_H ${rqt_template_plugin_UIS})
-endif()
+if ("${qt_gui_cpp_USE_QT_MAJOR_VERSION} " STREQUAL "5 ")
+    qt5_wrap_cpp(rqt_template_plugin_MOCS ${rqt_template_plugin_HDRS})
+    qt5_wrap_ui(rqt_template_plugin_UIS_H ${rqt_template_plugin_UIS})
+else ()
+    qt4_wrap_cpp(rqt_template_plugin_MOCS ${rqt_template_plugin_HDRS})
+    qt4_wrap_ui(rqt_template_plugin_UIS_H ${rqt_template_plugin_UIS})
+endif ()
 
 include_directories(
         ${rqt_template_plugin_INCLUDE_DIRECTORIES}
@@ -85,11 +83,11 @@ target_link_libraries(rqt_template_plugin
         ${catkin_LIBRARIES}
         )
 
-if("${qt_gui_cpp_USE_QT_MAJOR_VERSION} " STREQUAL "5 ")
-  target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
-else()
-  target_link_libraries(${PROJECT_NAME} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
-endif()
+if ("${qt_gui_cpp_USE_QT_MAJOR_VERSION} " STREQUAL "5 ")
+    target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+else ()
+    target_link_libraries(${PROJECT_NAME} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
+endif ()
 
 
 find_package(class_loader)

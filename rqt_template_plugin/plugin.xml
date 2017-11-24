@@ -1,5 +1,5 @@
 <library path="lib/librqt_template_plugin">
-    <class name="TemplatePlugin" type="rqt_template_plugin::TemplatePlugin" base_class_type="rqt_gui_cpp::Plugin">
+    <class type="rqt_template_plugin::TemplatePlugin" base_class_type="rqt_gui_cpp::Plugin">
         <description>
             An rqt plugin template.
         </description>

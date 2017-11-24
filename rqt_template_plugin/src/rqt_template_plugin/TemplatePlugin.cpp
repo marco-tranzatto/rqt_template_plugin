@@ -12,9 +12,6 @@
 
 #include <rqt_template_plugin/TemplateWidget.hpp>
 
-//PLUGINLIB_EXPORT_CLASS(rqt_template_plugin::TemplatePlugin, rqt_gui_cpp::Plugin)
-PLUGINLIB_DECLARE_CLASS(rqt_template_plugin, rqt_template_plugin::TemplatePlugin, rqt_template_plugin::TemplatePlugin, rqt_gui_cpp::Plugin)
-
 namespace rqt_template_plugin {
 
 TemplatePlugin::TemplatePlugin()
@@ -27,6 +24,8 @@ TemplatePlugin::TemplatePlugin()
 }
 
 void TemplatePlugin::initPlugin(qt_gui_cpp::PluginContext &context) {
+  widget_ = new TemplateWidget();
+  context.addWidget(widget_);
 }
 
 void TemplatePlugin::shutdownPlugin() {
@@ -41,3 +40,5 @@ void TemplatePlugin::restoreSettings(const qt_gui_cpp::Settings &plugin_settings
 }
 
 } /* namespace */
+
+PLUGINLIB_EXPORT_CLASS(rqt_template_plugin::TemplatePlugin, rqt_gui_cpp::Plugin)
