@@ -23,6 +23,9 @@ TemplatePlugin::TemplatePlugin()
   setObjectName("TemplatePlugin");
 }
 
+TemplatePlugin::~TemplatePlugin() {
+}
+
 void TemplatePlugin::initPlugin(qt_gui_cpp::PluginContext &context) {
   widget_ = new TemplateWidget();
   context.addWidget(widget_);
